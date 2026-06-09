@@ -1,487 +1,591 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 :root {
-    --primary:rgb(0, 0, 16);
-    --secondary:rgb(72, 72, 255);
-    --third:rgb(123, 123, 255);
-    --bacol1:rgba(24, 24, 68, 0.286);
-    --color-button:rgba(49, 49, 248, 0.896);
-    --warna-button:rgba(2, 21, 126, 0.315);
+  --primary: rgb(0, 0, 16);
+  --secondary: rgb(72, 72, 255);
+  --third: rgb(123, 123, 255);
+  --bacol1: rgba(24, 24, 68, 0.286);
+  --color-button: rgba(49, 49, 248, 0.896);
+  --warna-button: rgba(2, 21, 126, 0.315);
 }
 
 body {
-    color: white;
-    height: 200rem;
-    background-color: var(--primary);
+  color: white;
+  background-color: var(--primary);
+  overflow-x: hidden;
 }
 
 button {
-    color: white;
+  color: white;
 }
 
+a {
+    color: white;
+    text-decoration: none;
+}
 
-.navbar {
+#menu {
+    display: none;
+}
+.nav2 {
     position: fixed;
     top: 0;
+    bottom: 0;
     left: 0;
-    right: 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1rem;
-    background-color: var(--primary);
-    margin: 0 1rem;
-    height: 4rem;
-    border-bottom: 1px solid gray;
+    padding-top: 5rem;
+    width: 350px;
+    background-color: rgb(0, 38, 72);
+    transform: translateX(0);
+    transition: .5s;
+}
+
+.show {
+    transform: translateX(-350px);
+}
+#menu {
+    cursor: pointer;
+    background-color: transparent;
+}
+#menu i {   
+    font-size: 2rem;
+    padding-top: .3rem;
+}
+
+.nav2 ul li {
+    font-size: 4rem;
+    padding: 1.5rem;
+    transition: .5s;
+    border-bottom: 2px solid transparent;
+}
+.nav2 ul li:hover {
+    border-bottom: 2px solid white;
+}
+
+.nav2 ul {
+    padding: 0 1rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  z-index: 99999;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2rem;
+  background-color: var(--primary);
+  height: 4rem;
+  border-bottom: 1px solid gray;
 }
 
 .navbar .logo h2 {
-    font-family: 'Poppins';
+  font-family: "Poppins";
 }
 
-.navbar .nav ul{
-    display: flex;
-    gap: 4rem;
-    list-style: none;
-    font-weight: 100;
-    font-size: 1.2rem;
-    transition: .5s;
-    height: 100%;
+.navbar .nav ul {
+  display: flex;
+  gap: 4rem;
+  list-style: none;
+  font-weight: 100;
+  font-size: 1.2rem;
+  transition: 0.5s;
+  height: 100%;
 }
 
-.navbar .nav ul li{
-    position: relative;
-    transition: .4s;
+.navbar .nav ul li {
+  position: relative;
+  transition: 0.4s;
 }
 
 .navbar .nav ul li:hover {
-    color: var(--third);
-    font-size: 1.4rem;
+  color: var(--third);
+  font-size: 1.4rem;
 }
-.navbar .nav ul li::before{
-    content: '';
-    left: 0;
-    width: 0;
-    bottom: -15px;
-    height: 2px;
-    background-color: var(--third);
-    position: absolute;
-    transition: .4s;
+.navbar .nav ul li::before {
+  content: "";
+  left: 0;
+  width: 0;
+  bottom: -15px;
+  height: 2px;
+  background-color: var(--third);
+  position: absolute;
+  transition: 0.4s;
 }
 
 .navbar .nav ul li:hover::before {
-    width: 100%;
+  width: 100%;
 }
 button {
-    background-color: transparent;
-    padding: .5rem 1rem;
-    border-radius: 10px;
-    background-color: rgba(128, 128, 128, 0.281);
+  background-color: transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  background-color: rgba(128, 128, 128, 0.281);
 }
 
 .navbar button {
-    transition: .5s;
-    border: none;
+  transition: 0.5s;
+  border: none;
 }
 
 .navbar button:hover {
-    background-color: var(--third);
-    border: 1px solid white;
+  background-color: var(--third);
+  border: 1px solid white;
 }
 
 .hero1 {
-    margin-top: 5rem;
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    align-items: center;
-    justify-content: end;
+  margin-top: 5rem;
+  width: 100%;
+  height: auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-content: end;
 }
 
 .section-kiri {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    margin-left: 5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-left: 5rem;
 }
 
 .section-kiri .ijo {
-    font-family: 'Poppins';
-    font-weight: 200;
-    align-self: flex-start;
-    font-size: .9rem;
-    padding: .5rem .7rem;
-    border-radius: 20px;
-    border: none;
-    background-color: rgba(128, 128, 128, 0.247);
+  font-family: "Poppins";
+  font-weight: 200;
+  align-self: flex-start;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7rem;
+  border-radius: 20px;
+  border: none;
+  background-color: rgba(128, 128, 128, 0.247);
 }
 
 .hero1 .section-kiri span {
-    color: var(--secondary);
+  color: var(--secondary);
 }
 
 .button-bawah {
-    width: 90%;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    gap: 1rem;
+  width: 90%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
 }
 
 .button-bawah button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: .6rem;
-    font-family: 'Poppins';
-    border: none;
-    border-radius: 10px;
-    padding: 1rem 3rem;
-    background-color: var(--secondary);
-    font-size: 1.2rem;
-    transition: .4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  font-family: "Poppins";
+  border: none;
+  border-radius: 10px;
+  padding: 1rem 3rem;
+  background-color: var(--secondary);
+  font-size: 1.2rem;
+  transition: 0.4s;
 }
 .button-bawah button:hover {
-    background-color: transparent;
-    border: 1px solid grey;
+  background-color: transparent;
+  border: 1px solid grey;
 }
 
 .button-bawah .button2 {
-    font-family: 'Poppins';
-    border-radius: 10px;
-    border: 1px solid grey;
-    background-color: transparent;
-    font-size: 1.2rem;
+  font-family: "Poppins";
+  border-radius: 10px;
+  border: 1px solid grey;
+  background-color: transparent;
+  font-size: 1.2rem;
 }
 .button-bawah .button2:hover {
-    border: none;
-    background-color: var(--secondary);
-    font-size: 1.2rem;
+  border: none;
+  background-color: var(--secondary);
+  font-size: 1.2rem;
 }
 
 .gambar1 {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    margin-top: 1.3rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.3rem;
 }
 
 .gambar1 img {
-    width: 80%;
-    border-radius: 50%;
-    aspect-ratio: 1/1;
-    object-fit: cover;
+  width: 80%;
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
 }
-
 
 .hero1 .section-kiri h1 {
-    font-family: 'Poppins';
-    font-size: 4rem;
+  font-family: "Poppins";
+  font-size: 4rem;
 }
-
 
 .hero1 .section-kiri h2 {
-    margin-top: -2rem;
-    font-family: 'Poppins';
-    font-size: 3rem;
+  margin-top: -2rem;
+  font-family: "Poppins";
+  font-size: 3rem;
 }
 
-
 .hero1 .section-kiri p {
-    font-family: 'Poppins';
-    font-weight: 200;
-    font-size: 1.2rem;
+  font-family: "Poppins";
+  font-weight: 200;
+  font-size: 1.2rem;
 }
 
 .pembukus-icon {
-    display: grid;
-    grid-template-columns: repeat(4,1fr);
-    padding-right: 20rem;
-    margin-top: .5rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding-right: 20rem;
+  margin-top: 0.5rem;
 }
 
 .pembukus-icon i {
-    font-size: 1.8rem;
-    text-align: center;
-    padding: 1rem;
-    margin: .5rem;
-    background-color: transparent;
-    border-radius: 20px;
-    border: 1px solid grey;
+  font-size: 1.8rem;
+  text-align: center;
+  padding: 1rem;
+  margin: 0.5rem;
+  background-color: transparent;
+  border-radius: 20px;
+  border: 1px solid grey;
 }
 
 .pembukus-icon i:hover {
-    background-color: var(--secondary);
-    transition: .4s;
-    border: none;
+  background-color: var(--secondary);
+  transition: 0.4s;
+  border: none;
 }
-
 
 .hero2 {
-    width: 90%;
-    padding: 3rem 2rem;
-    margin: 4rem auto;
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    background-color: var(--bacol1);
-    border-radius: 20px;
+  width: 90%;
+  padding: 3rem 2rem;
+  margin: 4rem auto;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background-color: var(--bacol1);
+  border-radius: 20px;
 }
 
-
-
 .hero2 .section3-kiri {
-    padding-left: 1rem;
-    display: grid;
-    grid-template-columns: repeat(3,1);
-    align-self: flex-start;
-    gap: 1rem;
+  padding-left: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1);
+  align-self: flex-start;
+  gap: 1rem;
 }
 
 .hero2 .section3-kanan {
-    display: grid;
-    grid-template-columns: repeat(2,1fr);
-    margin-left: 5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  margin-left: 5rem;
 }
 
 .hero2 .section3-kanan h3 {
-    width: 100%;
-    padding: 1rem 0;
-    display: flex;
-    justify-content: ;
-    align-items: center;
-    font-size: 1.4rem;
+  width: 100%;
+  padding: 1rem 0;
+  display: flex;
+  align-items: center;
+  font-size: 1.4rem;
 }
 .hero2 .section3-kanan h3 i {
-    margin: .3rem .6rem 0 0;
+  margin: 0.3rem 0.6rem 0 0;
 }
 
 .hero2 .section3-kiri i {
-    margin: 1rem 1rem 0 1rem;
-    color: var(--color-button);
-    font-size: 2rem;
+  margin: 1rem 1rem 0 1rem;
+  color: var(--color-button);
+  font-size: 2rem;
 }
-
 
 .hero2 .section3-kiri h2 {
-    font-family: Poppins;
-    font-size: 1.8rem;
-    font-weight: 500;
+  font-family: Poppins;
+  font-size: 1.8rem;
+  font-weight: 500;
 }
-
 
 .hero2 .section3-kiri .classp {
-    font-family: Poppins;
-    font-weight: 200;
-    font-size: 1.2rem;
-    margin: 1rem 0 .5rem 1rem;
+  font-family: Poppins;
+  font-weight: 200;
+  font-size: 1.2rem;
+  margin: 1rem 0 0.5rem 1rem;
 }
 
-
 .hero2 .section3-kiri .button-hero3 button {
-    margin: 0 0 0 1rem;
-    padding: .5rem 1rem;
-    font-family: Poppins;
-    font-size: 1.5rem;
-    font-weight: 100;
-    border: 2.3px solid var(--color-button);
-    color: var(--color-button);
-    background-color: var(--bacol1);
-    border-radius: 10px;
-    align-items: center;
+  margin: 0 0 0 1rem;
+  padding: 0.5rem 1rem;
+  font-family: Poppins;
+  font-size: 1.5rem;
+  font-weight: 100;
+  border: 2.3px solid var(--color-button);
+  color: var(--color-button);
+  background-color: var(--bacol1);
+  border-radius: 10px;
+  align-items: center;
 }
 
 .hero2 .section3-kanan i {
-    padding-right: .5rem;
-    font-size: 2rem;
-    color: var(--color-button);
+  padding-right: 0.5rem;
+  font-size: 2rem;
+  color: var(--color-button);
 }
-
 
 .hero2 .section3-kanan h3 {
-    font-family: Poppins;
-    font-weight: 100;
-    font-size: 1.1rem;
+  font-family: Poppins;
+  font-weight: 100;
+  font-size: 1.1rem;
 }
-
-
 
 .hero3 {
-    margin: 0 4rem;
+  padding: 0 4rem;
 }
 
-.hero3 .logo-bahasa img{
-    width: 5rem;
+.hero3 .logo-bahasa img {
+  width: 100%;
 }
 
 .hero3 .logo-bahasa {
-    display: grid;  
-    margin-top: 2rem;
-    grid-template-columns: repeat(6,1fr);
-    gap: 1.5rem;
+  display: grid;
+  margin-top: 2rem;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 1.5rem;
 }
 
 .hero3 .logo-bahasa .case-logo {
-    background-color: var(--bacol1);
-    padding: 3rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: .8rem;
-    border-radius: 20px;
+  background-color: var(--bacol1);
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 20px;
 }
 
 .hero3 .logo-bahasa .case-logo:hover {
-    border: 1px solid grey;
+  border: 1px solid grey;
 }
 
 .hero3 .my-skil h2 {
-    font-family: Poppins;
-    font-weight: 300;
-    text-align: center;
-    font-size: 2rem;
-    padding: 1rem;
+  font-family: Poppins;
+  font-weight: 300;
+  text-align: center;
+  font-size: 2rem;
+  padding: 1rem;
 }
 
-
 .hero4 {
-    margin: 4rem;
+  padding: 4rem;
 }
 
 .judul1 h2 i {
-    margin: 1rem;
+  margin: 1rem;
 }
 
 .hero4 .judul1 {
-    display: flex;
-    justify-content: space-between;
-    padding-bottom: 1rem;
+  display: flex;
+  justify-content: space-between;
+  padding-bottom: 1rem;
 }
 
 .hero4 .judul1 span {
-    color: var(--color-button);
+  color: var(--color-button);
 }
 
 .kumpulan-project {
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 2rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
 }
 
 .project-card {
-    border-radius: 10px;
-    margin-top: 1rem;
-    padding: 1rem;
-    border: 1px solid rgba(34, 0, 255, 0.5);
-    background-color: var(--bacol1);
+  border-radius: 10px;
+  margin-top: 1rem;
+  padding: 1rem;
+  border: 1px solid rgba(34, 0, 255, 0.5);
+  background-color: var(--bacol1);
+}
+.kumpulan-project .gambar-project1 {
+    width: 100%;
+    height: auto;
 }
 .kumpulan-project .gambar-project1 img {
-    aspect-ratio: 1/1;
-    width: 21rem;
-    height: 10rem;
-    margin-bottom: 1rem;
+  aspect-ratio: 4/2.5;
+  width: 100%;
+  border-radius: 20px;
+  margin-bottom: 1rem;
 }
 
 .kumpulan-project h3 i {
-    padding-left: 9rem;
+  padding-left: 9rem;
 }
 
 .kumpulan-project h3 {
-    margin-bottom: .5rem;
-    font-family: Poppins;
-    font-size: 1rem;
+  margin-bottom: 0.5rem;
+  font-family: Poppins;
+  font-size: 1rem;
 }
 
 .kumpulan-project p {
-    font-family: Poppins;
-    font-weight: 300;
-    font-size: .8rem;
+  font-family: Poppins;
+  font-weight: 300;
+  font-size: 0.8rem;
 }
 
 .kumpulan-project .button-project button {
-    margin: 1rem .1rem 0;
-    border: none;
-    padding: .5rem 1rem;
-    border-radius: 10px;
+  margin: 1rem 0.1rem 0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
 }
 
 .hero5 {
-    display: flex;
-    justify-content: space-between;
-    background-color: var(--bacol1);
-    margin: 3rem 0;
-    padding: 3rem;
-    border-radius: 20px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--bacol1);
+  margin: 3rem 0;
+  padding: 3rem;
+  border-radius: 20px;
 }
 
 .hero5 .hero-5kiri .judul-hero5 {
-    display: flex;
-    gap: 1rem;
-    align-items: center;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
 }
 
 .hero5 .hero-5kiri .judul-hero5 h2 {
-    font-size: 1.8rem;
-    font-family: Poppins;
-    font-weight: bold;
+  font-size: 1.8rem;
+  font-family: Poppins;
+  font-weight: bold;
 }
 
 .hero5 .hero-5kiri .judul-hero5 i {
-    font-size: 1.8rem;
+  font-size: 1.8rem;
 }
 
 .hero5 .hero-5kiri .judul-hero5 span {
-    color: var(--color-button);
+  color: var(--color-button);
 }
-.hero5 .hero-5kiri .hero5-p{
-    margin: 1.5rem 0;
-    padding-bottom: 1rem;
+.hero5 .hero-5kiri .hero5-p {
+  margin: 1.5rem 0;
+  padding-bottom: 1rem;
 }
 
-.hero5 .hero-5kiri .hero5-p p{
-    padding: .5rem 0 0 0;
-    font-size: 1rem;
-    font-weight: 300;
-    font-family: Poppins;
+.hero5 .hero-5kiri .hero5-p p {
+  padding: 0.5rem 0 0 0;
+  font-size: 1rem;
+  font-weight: 300;
+  font-family: Poppins;
 }
 
 .hero5 .hero-5kiri .button-hero5 {
-    display: flex;
-    gap: 1.5rem;
+  display: flex;
+  gap: 1.5rem;
 }
 
 .hero5 .hero-5kiri .button-hero5 i {
-    background-color: var(--warna-button);
-    padding: 1.5rem;
-    border-radius: 10px;
-    font-size: 1.5rem;
-    margin-left: -.2rem;
+  background-color: var(--warna-button);
+  padding: 1.5rem;
+  border-radius: 10px;
+  font-size: 1.5rem;
 }
 
 .hero5 .hero-5kanan {
-    height: fit-content;
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-    gap: 1rem;
-
-    margin-top: 3rem;    
+  height: fit-content;
+  grid-template-columns: repeat(2, 1fr);
+  display: grid;
+  gap: 1rem;
+  margin-top: 3rem;
 }
 
 .hero5 .hero-5kanan .isi-hero5 {
-    padding: 1rem;
+  padding: 1rem;
+  width: 100%;
 }
 .hero5 .hero-5kanan .isi-hero5 .kntl {
-    display: flex;
+  display: flex;
 }
 
 .hero5 .hero-5kanan .isi-hero5 .kntl h2 {
-    padding-left: 1rem;
-    font-size: 1.3rem;
+  padding-left: 1rem;
+  font-size: 1.3rem;
 }
 .hero5 .hero-5kanan .isi-hero5 .kntl i {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
 
+@media (max-width: 768px) {
+  html {
+    font-size: 80%;
+  }
+  .hidden {
+    display: none;
+  }
+  .button-bawah {
+    width: auto;
+    grid-template-columns: repeat(1,1fr);
+  }
+  .button-bawah button {
+    width: 70%;
+  }
+  .section-kiri {
+    width: 100%;
+    margin-left: 10rem;
+  }
+  .gambar1 {
+    display: none;
+}
+.gambar1 img {
+    display: none;
+  }
+  .hero3 .logo-bahasa {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .kumpulan-project {
+      grid-template-columns: repeat(1, 1fr);
+      width: 100%;
+      h3 {
+          font-size: 1.7rem;
+        }
+        p  {
+            font-size: 1.1rem;
+        }
+    }
+    
+    .hero5 {
+        flex-direction: column;
+    }
+    
+    .hero5 .hero-5kanan {
+        grid-template-columns: repeat(1, 1fr);
+    }
+  .hero2 {
+  grid-template-columns: repeat(1, 1fr);
+  }
+
+  .nav {
+    display: none;
+  }
+  .hero2 .section3-kanan {
+    margin-top: 1.5rem;
+  }
+  
+  #menu {
+    display: block;
+  }
+}
+
+
+@media (max-width: 495px) {
+    html {
+        font-size: 76%;
+    }
+    .hero3 .logo-bahasa {
+      grid-template-columns: repeat(2, 1fr);
+    }
+}
